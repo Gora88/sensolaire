@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos Produits - SenSolaire</title>
+<link rel="stylesheet" href="../produit.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="logo">
+    <img src="../images/logo.png" alt="SenSolaire">
+    <h1>SenSolaire</h1>
+  </div>
+  <!-- ===== BARRE DE RECHERCHE ===== -->
+  <div class="search-bar">
+     <input type="text" id="search-input" placeholder="🔍 Rechercher un produit (ex: pompe, onduleur, panneau...)">
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="../index.html">ACCUEIL</a></li>
+      <li><a href="../index.html#apropos">A PROPOS</a></li>
+      <li><a href="../index.html#services">SERVICES</a></li>
+      <li><a href="../pages/portfolio.html">PORTFOLIOS</a></li>
+      <li><a href="../index.html#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ===== BANNIÈRE ===== -->
+<div class="banner">
+  <div class="banner-content">
+    <span><i class="fa-solid fa-sun"></i> Promotion sur les panneaux solaires</span>
+    <span><i class="fa-solid fa-car-battery"></i> Batteries à prix réduit</span>
+    <span><i class="fa-solid fa-lightbulb"></i> Lampadaires solaires en stock</span>
+    <span><i class="fa-solid fa-fan"></i> Ventilateurs en stock</span>
+    <span><i class="fa-solid fa-plug"></i> Onduleurs en stock</span>
+    <span><i class="fa-solid fa-snowflake"></i> Frigos en stock</span>
+    <span><i class="fa-solid fa-water"></i> Pompes en stock</span>
+  </div>
+</div>
+
+<!-- ===== CONTENEUR PRINCIPAL ===== -->
+<div class="produit-container">
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <h3>Catégories</h3>
+    <ul>
+      <li><a href="#" data-cat="all" class="active"><i class="fa-solid fa-list"></i> Tous</a></li>
+      <li><a href="#" data-cat="panneaux">   <i class="fa-solid fa-solar-panel"></i> Panneaux</a></li>
+      <li><a href="#" data-cat="onduleurs">  <i class="fa-solid fa-bolt">       </i> Onduleurs</a></li>
+      <li><a href="#" data-cat="regulateurs"><i class="fa-solid fa-sliders">    </i> Régulateurs</a></li>
+      <li><a href="#" data-cat="batteries">  <i class="fa-solid fa-car-battery"></i> Batteries</a></li>
+      <li><a href="#" data-cat="lampadaires"><i class="fa-solid fa-lightbulb">  </i> Lampadaires solaires</a></li>
+      <li><a href="#" data-cat="projecteurs"><i class="fa-solid fa-sun">        </i> Projecteurs solaires</a></li>
+      <li><a href="#" data-cat="cables">     <i class="fa-solid fa-plug">       </i> Câbles</a></li>
+      <li><a href="#" data-cat="Chauffe">    <i class="fa-solid fa-droplet">    </i> Chauffe eau</a></li>
+      <li><a href="#" data-cat="Ventilateur"><i class="fa-solid fa-fan">        </i> Ventilateur</a></li>
+      <li><a href="#" data-cat="Frigo">      <i class="fa-solid fa-snowflake">        </i> Frigo</a></li>
+      <li><a href="#" data-cat="Pompe">      <i class="fa-solid fa-water">      </i> Pompe solaire</a></li>
+      <li><a href="#" data-cat="accessoires"><i class="fa-solid fa-wrench">     </i> Accessoires</a></li>
+    </ul>
+  </aside>
+
+
+  <!-- ===== SECTION PRODUITS ===== -->
+  <section class="produits">
+    <div class="produit-grid">
+      <div class="produit-card" data-cat="panneaux">
+        <img src="../images/panneau.jpg" alt="Panneau solaire"> 
+        <h3>Panneau Solaire 300W</h3>
+        <p>Haute performance et résistance.</p>
+        <p>Prix : 150000 FCFA</p>
+        <button>Commander</button>
+      </div>
+
+      <div class="produit-card" data-cat="onduleurs">
+        <img src="../images/onduleur.jpg" alt="Onduleur">
+        <h3>Onduleur Solaire WHC 5kVA</h3>
+        <p>Convertit efficacement l’énergie solaire.</p>
+        <p>Prix : 250000 FCFA</p>
+        <button>Commander</button>
+      </div>
+
+      <div class="produit-card" data-cat="lampadaires">
+        <img src="../images/lampadaire.jpg" alt="Lampadaire">
+        <h3>Lampadaire Solaire 100W</h3>
+        <p>Éclairage public autonome et durable.</p>
+        <p>Prix : 120000 FCFA</p>
+        <button>Commander</button>
+      </div>
+       
+      <div class="produit-card" data-cat="Frigo">
+        <img src="../images/frigo.jpg" alt="Frigo">
+        <h3>Congelateur Solaire 100W</h3>
+        <p>Congelateur solaire de 300L, Tres pratique pour vos commerces</p>
+        <p>Prix : 220000 FCFA</p>
+        <button>Commander</button>
+      </div>
+
+
+       <div class="produit-card" data-cat="Ventilateur">
+        <img src="../images/ventilo.jpg" alt="ventilo">
+        <h3>Ventilateur Solaire 50W</h3>
+        <p>Solution economique en cette periode de forte chaleur</p>
+        <p>Prix : 60000 FCFA</p>
+        <button>Commander</button>
+      </div>
+
+
+      <div class="produit-card" data-cat="projecteurs">
+        <img src="../images/projecteur1.jpg" alt="Projecteur">
+        <h3>Projecteur Solaire LED 200W</h3>
+        <p>Éclairage puissant pour espaces extérieurs.</p>
+        <p>Prix : 85000 FCFA</p>
+        <button>Commander</button>
+      </div>
+      
+      
+      <div class="produit-card" data-cat="Pompe">
+        <img src="../images/pompe1.jpg" alt="Pompe">
+        <h3>Pompe solaire 500w</h3>
+        <p>Pompe solaire sans controlleur de faible puissance pour vos maison</p>
+        <p>Prix : 70000 FCFA</p>
+        <button>Commander</button>
+      </div>
+
+      <div class="produit-card" data-cat="lampadaires">
+        <img src="../images/lampadaire1.jpg" alt="Lampadaire">
+        <h3>Lampadaire Solaire 100W</h3>
+        <p>Éclairage public autonome et durable.</p>
+        <p>Prix : 120000 FCFA</p>
+        <button>Commander</button>
+      </div>
+
+      
+      <div class="produit-card" data-cat="onduleurs">
+        <img src="../images/onduleur.jpg" alt="Onduleur">
+        <h3>Onduleur Solaire WHC 5kVA</h3>
+        <p>Convertit efficacement l’énergie solaire.</p>
+        <p>Prix : 250000 FCFA</p>
+        <button>Commander</button>
+      </div>
+
+      <div class="produit-card" data-cat="lampadaires">
+        <img src="../images/lampadaire1.jpg" alt="Lampadaire">
+        <h3>Lampadaire Solaire 100W</h3>
+        <p>Éclairage public autonome et durable.</p>
+        <p>Prix : 120000 FCFA</p>
+        <button>Commander</button>
+      </div>
+
+      
+      <div class="produit-card" data-cat="onduleurs">
+        <img src="../images/felicity.jpg" alt="Onduleur">
+        <h3>Onduleur Solaire FELICITY 5kVA</h3>
+        <p>Convertit efficacement l’énergie solaire.</p>
+        <p>Prix : 250000 FCFA</p>
+        <button>Commander</button>
+      </div>
+
+      <div class="produit-card" data-cat="lampadaires">
+        <img src="../images/lampadaire1.jpg" alt="Lampadaire">
+        <h3>Lampadaire Solaire 100W</h3>
+        <p>Éclairage public autonome et durable.</p>
+        <p>Prix : 120000 FCFA</p>
+        <button>Commander</button>
+      </div>
+
+      
+      <div class="produit-card" data-cat="onduleurs">
+        <img src="../images/onduleur.jpg" alt="Onduleur">
+        <h3>Onduleur Solaire WHC 5kVA</h3>
+        <p>Convertit efficacement l’énergie solaire.</p>
+        <p>Prix : 250000 FCFA</p>
+        <button>Commander</button>
+      </div>
+
+      <div class="produit-card" data-cat="lampadaires">
+        <img src="../images/lampadaire1.jpg" alt="Lampadaire">
+        <h3>Lampadaire Solaire 100W</h3>
+        <p>Éclairage public autonome et durable.</p>
+        <p>Prix : 120000 FCFA</p>
+        <button>Commander</button>
+      </div>
+
+
+
+    </div>
+  </section>
+</div>
+
+
+
+
+  <!-- ✅ Panier flottant -->
+  <div id="cart" class="cart">
+    <h2>🛒 Votre Panier</h2>
+    <ul id="cart-items"></ul>
+    <p>Total : <span id="cart-total">0</span> FCFA</p>
+    <button id="btn-print">🧾 Valider la commande</button>
+    <button id="btn-clear">🗑️ Vider</button>
+  </div>
+
+  <!-- ✅ Popup Formulaire client -->
+  <div id="client-form" class="modal hidden">
+    <div class="modal-content">
+      <h3>Informations du client</h3>
+      <label>Nom :</label>
+      <input type="text" id="client-name" required>
+      <label>Téléphone :</label>
+      <input type="text" id="client-phone" required>
+      <label>Adresse :</label>
+      <textarea id="client-address" required></textarea>
+      <div class="form-actions">
+        <button id="submit-form">Confirmer</button>
+        <button id="close-form">Annuler</button>
+      </div>
+    </div>
+  </div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 SenSolaire — Tous droits réservés.</p>
+    <div class="social-icons">
+      <a href="https://facebook.com"  target="_blank" class="facebook"><i  class="fab fa-facebook-f"></i></a>
+      <a href="https://youtube.com"   target="_blank" class="youtube"><i   class="fab fa-youtube"></i></a>
+      <a href="https://linkedin.com"  target="_blank" class="linkedin"><i  class="fab fa-linkedin-in"></i></a>
+      <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com"   target="_blank" class="twitter"><i   class="fab fa-twitter"></i></a>
+      <a href="https://tiktok.com"    target="_blank" class="tiktok"><i     class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== BOUTON WHATSAPP FLOTTANT ===== -->
+<a href="https://wa.me/221762585606" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ===== MODALE IMAGE PRODUIT AVANCÉE ===== -->
+<div id="imageModal" class="modal hidden">
+  <div class="modal-content">
+    <span id="closeImageModal" class="close">&times;</span>
+
+    <h2 id="modalProductName"></h2>
+
+    <!-- Flèches gauche/droite -->
+    <span id="prevImage" class="arrow left">&#10094;</span>
+    <img id="modalMainImage" src="" alt="Produit" class="main-image">
+    <span id="nextImage" class="arrow right">&#10095;</span>
+
+    <p id="modalProductDescription"></p>
+    <p id="modalProductPrice" class="price"></p>
+    <div id="modalThumbnails" class="thumbnails"></div>
+  </div>
+</div>
+
+
+
+<script src="produit.js"></script>
+
+</body>
+</html>
