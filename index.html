@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 
 <body>
@@ -18,7 +17,8 @@
       <img src="images/logo.png" alt="SenSolaire">
       <h1>SenSolaire</h1>
     </div>
-    <nav>
+
+    <nav id="navbar">
       <ul>
         <li><a href="#accueil" class="active">ACCUEIL</a></li>
         <li><a href="#apropos">A PROPOS</a></li>
@@ -28,6 +28,11 @@
         <li><a href="#contact">CONTACT</a></li>
       </ul>
     </nav>
+
+    <!-- menu burger -->
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fa-solid fa-bars"></i>
+    </div>
   </header>
 
   <!-- HERO -->
@@ -37,72 +42,62 @@
     <a href="#contact" class="btn">Demander un devis</a>
   </section>
 
-  <!-- A PROPOS -->
-<!-- SECTION À PROPOS -->
-<section id="apropos">
-  <div class="apropos-container">
-
-    <div class="apropos-texte">
-      <h2>À propos de nous</h2>
-      <p>Chez <strong>SenSolaire</strong>, nous offrons des solutions d’énergie solaire sur mesure pour particuliers et entreprises.  
-      Notre mission est de vous aider à réduire votre consommation électrique et à adopter une énergie propre et durable.</p>
-      <p>Nous assurons l'installation, la maintenance, la vente de matériel solaire, ainsi que le suivi après-vente pour garantir votre satisfaction totale.</p>
-      <p><strong>Chez SenSolaire, Votre satisfaction, Notre priorité !!!</strong></p>
+  <!-- À PROPOS -->
+  <section id="apropos">
+    <div class="apropos-container">
+      <div class="apropos-texte">
+        <h2>À propos de nous</h2>
+        <p>Chez <strong>SenSolaire</strong>, nous offrons des solutions d’énergie solaire sur mesure pour particuliers et entreprises.</p>
+        <p>Notre mission est de vous aider à réduire votre consommation électrique et à adopter une énergie propre et durable.</p>
+        <p><strong>Chez SenSolaire, votre satisfaction, notre priorité !</strong></p>
+      </div>
+      <div class="apropos-image">
+        <img src="images/apropos.jpg" alt="À propos de nous">
+      </div>
     </div>
-
-    <div class="apropos-image">
-      <img src="images/apropos.jpg" alt="À propos de nous">
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- SERVICES -->
-<section id="services">
-  <h2>Nos Services</h2>
-  <div class="services-container">
+  <section id="services">
+    <h2>Nos Services</h2>
+    <div class="services-container">
+      <div>
+        <i class="fas fa-solar-panel service-icon"></i>
+        <h3>Installation</h3>
+        <p>Installation de panneaux solaires résidentiels et industriels.</p>
+      </div>
 
-    <div>
-      <i class="fas fa-solar-panel service-icon"></i>
-      <h3>Installation</h3>
-      <p>Installation de panneaux solaires résidentiels et industriels.</p>
+      <div>
+        <i class="fas fa-tools service-icon"></i>
+        <h3>Maintenance</h3>
+        <p>Maintenance et suivi des installations pour garantir la performance.</p>
+      </div>
+
+      <div>
+        <i class="fas fa-chart-line service-icon"></i>
+        <h3>Études personnalisées</h3>
+        <p>Analyses détaillées pour maximiser votre production d’énergie.</p>
+      </div>
+
+      <div>
+        <i class="fas fa-store service-icon"></i>
+        <h3>Vente</h3>
+        <p>Vente et fourniture de produits solaires certifiés et durables.</p>
+      </div>
+
+      <div>
+        <i class="fas fa-wrench service-icon"></i>
+        <h3>Réparation</h3>
+        <p>Réparation rapide et efficace des installations solaires existantes.</p>
+      </div>
+
+      <div>
+        <i class="fas fa-headset service-icon"></i>
+        <h3>Service après-vente</h3>
+        <p>Assistance et suivi client pour garantir la durabilité de vos installations.</p>
+      </div>
     </div>
-
-    <div>
-      <i class="fas fa-tools service-icon"></i>
-      <h3>Maintenance</h3>
-      <p>Maintenance et suivi des installations pour garantir la performance.</p>
-    </div>
-
-    <div>
-      <i class="fas fa-chart-line service-icon"></i>
-      <h3>Études personnalisées</h3>
-      <p>Analyses détaillées pour maximiser votre production d’énergie.</p>
-    </div>
-
-    <div>
-      <i class="fas fa-store service-icon"></i>
-      <h3>Vente</h3>
-      <p>Vente et fourniture de produits solaires certifiés et durables.</p>
-    </div>
-
-     <div>
-      <i class="fas fa-wrench service-icon"></i>
-      <h3>Réparation</h3>
-      <p>Réparation rapide et efficace des installations solaires existantes.</p>
-    </div>
-
-    <!-- 📞 Nouveau service : Service après-vente -->
-    <div>
-      <i class="fas fa-headset service-icon"></i>
-      <h3>Service après-vente</h3>
-      <p>Assistance et suivi client pour garantir la durabilité de vos installations.</p>
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- CONTACT -->
   <section id="contact">
@@ -117,24 +112,33 @@
   </section>
 
   <!-- FOOTER -->
- <footer>
-  <div class="footer-content">
-    <p>&copy; 2025 SenSolaire — Tous droits réservés.</p>
-    <div class="social-icons">
-      <a href="https://facebook.com"  target="_blank" class="facebook"> <i  class="fab fa-facebook-f"></i></a>
-      <a href="https://youtube.com"   target="_blank" class="youtube">  <i   class="fab fa-youtube"></i></a>
-      <a href="https://linkedin.com"  target="_blank" class="linkedin"> <i  class="fab fa-linkedin-in"></i></a>
-      <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com"   target="_blank" class="twitter">  <i   class="fab fa-x-twitter"></i></a>
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 SenSolaire — Tous droits réservés.</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+        <a href="https://linkedin.com" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com" target="_blank" class="twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- Bouton WhatsApp flottant -->
-<a href="https://wa.me/00221762585606" class="whatsapp-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <!-- Bouton WhatsApp flottant -->
+  <a href="https://wa.me/00221762585606" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-
+  <script>
+    // Menu burger responsive
+    const toggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+    toggle.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      toggle.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
+
