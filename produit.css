@@ -425,7 +425,7 @@ nav a:hover {
 /* Responsive mobile */
 @media (max-width: 768px) {
   #cart {
-    width: 80%;
+    width: 50%;
     left: 5%;
     right: auto;
     top: 60px;
