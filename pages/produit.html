@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="../produit.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
@@ -199,13 +201,25 @@
 
 
   <!-- ✅ Panier flottant -->
-  <div id="cart" class="cart">
-    <h2>🛒 Votre Panier</h2>
-    <ul id="cart-items"></ul>
+ 
+
+<div id="cart">
+  <div id="cart-header">🛒 Mon Panier </div>
+  <ul id="cart-items"></ul>
+  <div style="margin-top:10px;">
     <p>Total : <span id="cart-total">0</span> FCFA</p>
-    <button id="btn-print">🧾 Valider la commande</button>
+    <button id="btn-print">🧾 Commander</button>
     <button id="btn-clear">🗑️ Vider</button>
+    
   </div>
+</div>
+
+
+
+
+
+
+
 
   <!-- ✅ Popup Formulaire client -->
   <div id="client-form" class="modal hidden">
