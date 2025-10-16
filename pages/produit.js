@@ -407,3 +407,13 @@ document.getElementById('search-input').addEventListener('input', function() {
 });
 
 
+
+//cacher le menu en v ersion mobile
+document.addEventListener('DOMContentLoaded', () => {
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('main-nav');
+
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');  // ajoute/enlève la classe active
+  });
+});
