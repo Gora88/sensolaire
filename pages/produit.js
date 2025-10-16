@@ -373,3 +373,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('DOMContentLoaded', run);
 })();
+
+
+//Barre de recherche
+document.getElementById('search-input').addEventListener('input', function() {
+  const term = this.value.toLowerCase();
+  document.querySelectorAll('.produit-card').forEach(card => {
+    const name = card.querySelector('h3').textContent.toLowerCase();
+    const desc = card.querySelector('p')?.textContent.toLowerCase() || '';
+    card.style.display = (name.includes(term) || desc.includes(term)) ? '' : 'none';
+  });
+});
+
+
