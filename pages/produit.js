@@ -311,7 +311,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "Onduleur 5kW": ["../images/onduleur.jpg","../images/onduleur2.jpg"],
     "Lampadaire Solaire 100W": ["../images/lampadaire.jpg","../images/lampadaire2.jpg"],
     "Projecteur Solaire LED 200W": ["../images/projecteur1.jpg","../images/projecteur2.jpg"],
-    "Pompe solaire 500w": ["../images/pompe1.jpg","../images/pompe.jpg"]
+    "Pompe solaire 500w": ["../images/pompe1.jpg","../images/pompe.jpg"],
+    "Projecteur Solaire LED 200W": ["../images/projecteur.jpg","../images/projecteur.jpg"]
   };
 
   let currentImages = [];
