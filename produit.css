@@ -346,7 +346,7 @@ nav a:hover {
   position: fixed;
   top: 80px;       /* Position initiale */
   right: 20px;
-  width: 300px;
+  width: 250px;
   max-height: 70vh;
   background: #fff;
   border: 2px solid #16a085;
