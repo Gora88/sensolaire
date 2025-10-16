@@ -938,29 +938,5 @@ footer {
 }
 
 
-/* cache le menu */
-@media (max-width: 768px) {
-  #main-nav ul {
-    display: none;      /* cache le menu */
-    flex-direction: column;
-    background: #fff;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    border: 1px solid #16a085;
-    border-radius: 8px;
-    padding: 10px;
-    z-index: 1000;
-  }
 
-  #main-nav.active ul {
-    display: flex;      /* affiche le menu quand active */
-  }
 
-  #burger {
-    display: block;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #16a085;
-  }
-}
