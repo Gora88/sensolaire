@@ -248,11 +248,11 @@ Merci pour votre confiance 🌞
   window.open(whatsappURL, '_blank');
 }
 
-// ======== PANIER FLOTTANT DÉPLAÇABLE ========
 function makeCartDraggable() {
   const cartEl = document.getElementById('cart');
   let offsetX = 0, offsetY = 0, isDown = false;
 
+  // ===== Souris =====
   cartEl.addEventListener('mousedown', e => {
     isDown = true;
     offsetX = e.clientX - cartEl.offsetLeft;
@@ -270,7 +270,28 @@ function makeCartDraggable() {
     cartEl.style.left = (e.clientX - offsetX) + 'px';
     cartEl.style.top = (e.clientY - offsetY) + 'px';
   });
+
+  // ===== Touchscreen (mobile / tablette) =====
+  cartEl.addEventListener('touchstart', e => {
+    isDown = true;
+    const touch = e.touches[0];
+    offsetX = touch.clientX - cartEl.offsetLeft;
+    offsetY = touch.clientY - cartEl.offsetTop;
+  });
+
+  document.addEventListener('touchend', () => {
+    isDown = false;
+  });
+
+  document.addEventListener('touchmove', e => {
+    if (!isDown) return;
+    const touch = e.touches[0];
+    cartEl.style.left = (touch.clientX - offsetX) + 'px';
+    cartEl.style.top = (touch.clientY - offsetY) + 'px';
+    e.preventDefault(); // empêche le scroll pendant le drag
+  }, { passive: false });
 }
+
 
 // ======== MODALE PRODUIT AVANCÉE ========
 document.addEventListener('DOMContentLoaded', () => {
