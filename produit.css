@@ -382,6 +382,11 @@ nav a:hover {
   cursor: pointer;
   transition: background 0.3s;
 }
+#cart > div p {
+  text-align: center;
+  font-size: 1rem; /* optionnel pour ajuster la taille */
+  margin-bottom: 10px; /* pour espacer le total des boutons */
+}
 
 /* Bouton "Vider" en rouge */
 #btn-clear {
