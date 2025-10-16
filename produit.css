@@ -341,7 +341,6 @@ nav a:hover {
 }
 
 
-
 /* ====== PANIER FLOTTANT COMPLET ====== */
 #cart {
   position: fixed;
@@ -370,14 +369,7 @@ nav a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  user-select: none; /* empêche la sélection de texte en drag */
-}
-
-/* Contenu du panier centré */
-#cart > div p {
-  text-align: center;
-  font-size: 1rem;
-  margin-bottom: 10px;
+  user-select: none; /* évite la sélection de texte en drag */
 }
 
 /* Boutons à l’intérieur du panier */
@@ -388,6 +380,11 @@ nav a:hover {
   font-size: 0.9rem;
   cursor: pointer;
   transition: background 0.3s;
+}
+#cart > div p {
+  text-align: center;
+  font-size: 1rem; /* optionnel pour ajuster la taille */
+  margin-bottom: 10px; /* pour espacer le total des boutons */
 }
 
 /* Bouton "Vider" en rouge */
@@ -401,7 +398,21 @@ nav a:hover {
   background-color: #c0392b;
 }
 
-/* Bouton "Commander" en vert */
+/* Boutons + / - discrets */
+.qty-btn {
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: bold;
+}
+
+.qty-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Autres boutons (ex: imprimer) */
 #btn-print {
   background-color: #16a085;
   color: white;
@@ -409,36 +420,6 @@ nav a:hover {
 
 #btn-print:hover {
   background-color: #13835d;
-}
-
-/* Boutons + / - circulaires */
-.qty-btn {
-  background-color: #16a085; 
-  color: white;
-  border: none;
-  border-radius: 50%; /* cercle parfait */
-  width: 28px;
-  height: 28px;
-  font-weight: bold;
-  font-size: 1rem;
-  line-height: 28px; /* centrer verticalement */
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.3s;
-  display: inline-block;
-  margin: 0 5px; /* espace autour */
-}
-
-.qty-btn:hover {
-  background-color: #13835d;
-}
-
-/* Quantité centrée */
-.cart-controls .qty {
-  display: inline-block;
-  min-width: 20px;
-  text-align: center;
-  font-weight: bold;
 }
 
 /* Responsive mobile */
