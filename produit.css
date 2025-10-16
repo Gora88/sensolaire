@@ -421,6 +421,11 @@ nav a:hover {
 #btn-print:hover {
   background-color: #13835d;
 }
+#cart > div p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: bold; /* ça rend déjà le total en gras */
+}
 
 /* Responsive mobile */
 @media (max-width: 768px) {
