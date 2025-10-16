@@ -523,7 +523,6 @@ nav a:hover {
   color: #e74c3c;
 }
 
-
 /* ===== MODALE PRODUIT AVEC NAVIGATION ===== */
 .modal {
   position: fixed;
@@ -638,7 +637,6 @@ nav a:hover {
   transform: translateY(-50%) scale(1.1);
 }
 
-/* ====== Responsive ====== */
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     header {
@@ -680,7 +678,6 @@ nav a:hover {
         grid-template-columns: 1fr;
     }
 }
-
 
 /* ===== FOOTER ===== */
 footer {
