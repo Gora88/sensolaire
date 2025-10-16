@@ -383,20 +383,45 @@ Merci pour votre confiance 🌞
 // ======== PANIER FLOTTANT DÉPLAÇABLE ========
 function makeCartDraggable() {
   const cart = document.getElementById('cart');
+  const header = document.getElementById('cart-header'); // zone de drag
   let offsetX = 0, offsetY = 0, isDown = false;
 
-  cart.addEventListener('mousedown', e => {
+  // ===== PC =====
+  header.addEventListener('mousedown', e => {
     isDown = true;
     offsetX = e.clientX - cart.offsetLeft;
     offsetY = e.clientY - cart.offsetTop;
+    cart.style.cursor = 'grabbing';
   });
 
-  document.addEventListener('mouseup', () => isDown = false);
   document.addEventListener('mousemove', e => {
     if (!isDown) return;
     cart.style.left = (e.clientX - offsetX) + 'px';
     cart.style.top = (e.clientY - offsetY) + 'px';
   });
+
+  document.addEventListener('mouseup', () => {
+    isDown = false;
+    cart.style.cursor = 'grab';
+  });
+
+  // ===== MOBILE =====
+  header.addEventListener('touchstart', e => {
+    isDown = true;
+    const touch = e.touches[0];
+    offsetX = touch.clientX - cart.offsetLeft;
+    offsetY = touch.clientY - cart.offsetTop;
+  });
+
+  document.addEventListener('touchmove', e => {
+    if (!isDown) return;
+    const touch = e.touches[0];
+    cart.style.left = (touch.clientX - offsetX) + 'px';
+    cart.style.top = (touch.clientY - offsetY) + 'px';
+    e.preventDefault(); // empêche le scroll pendant le drag
+  }, { passive: false });
+
+  document.addEventListener('touchend', () => isDown = false);
 }
 
 
