@@ -71,6 +71,15 @@ nav a:hover {
   text-decoration: underline;
 }
 
+
+
+
+
+
+
+
+
+
 /* ===== Bannière défilante ===== */
 .banner {
   width: 100%;
@@ -233,9 +242,9 @@ nav a:hover {
 
 
 /* ===== SECTION PRODUITS ===== */
-/* Décaler le contenu principal (sinon il passe sous la bannière) */
+
 .produit-container {
-  margin-top: 200px; /* header (75px) + bannière (60px) + espace */
+  margin-top: 200px; 
 }
 .produits {
   flex: 1;
