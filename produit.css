@@ -907,6 +907,13 @@ nav a:hover {
   }
 }
 
+
+/* Flèches sidebar invisibles par défaut (desktop) */
+.sidebar-toggle.left,
+.sidebar-toggle.right {
+  display: none;
+}
+
 /* ===== FOOTER ===== */
 footer {
   background: #1abc9c;
