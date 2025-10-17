@@ -411,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 
-//Barre de recherche
+//toggle pour le sidebarre
 const sidebar = document.querySelector('.sidebar');
 const openBtn = document.querySelector('.sidebar-toggle.left');
 const closeBtn = document.querySelector('.sidebar-toggle.right');
@@ -424,4 +424,15 @@ openBtn.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => {
   sidebar.classList.remove('open');
   sidebar.classList.add('closed');
+});
+
+
+//Barre de recherche
+document.getElementById('search-input').addEventListener('input', function() {
+  const term = this.value.toLowerCase();
+  document.querySelectorAll('.produit-card').forEach(card => {
+    const name = card.querySelector('h3').textContent.toLowerCase();
+    const desc = card.querySelector('p')?.textContent.toLowerCase() || '';
+    card.style.display = (name.includes(term) || desc.includes(term)) ? '' : 'none';
+  });
 });
