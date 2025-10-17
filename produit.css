@@ -637,47 +637,190 @@ nav a:hover {
   transform: translateY(-50%) scale(1.1);
 }
 
-/* ===== RESPONSIVE ===== */
+
+/* ===== RESPONSIVE ===== *//* ===== RESPONSIVE MOBILE & TABLETTE ===== */
+@media (max-width: 1024px) {
+  /* ✅ Réorganisation du header */
+  header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  /* ✅ Logo toujours à gauche */
+  header .logo {
+    order: 1;
+  }
+
+  /* ✅ Barre de recherche centrée sous le header */
+  .search-bar {
+    order: 3;
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  /* ✅ Menu hamburger visible à droite */
+  .menu-toggle {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+  }
+
+  /* ✅ Cacher la navigation par défaut */
+  nav {
+    display: none;
+    width: 100%;
+    background: white;
+    text-align: center;
+    border-top: 1px solid #ddd;
+  }
+
+  /* ✅ Afficher le menu au clic */
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    margin: 15px 0;
+  }
+
+  /* ✅ Liens noirs pour être lisibles sur fond blanc */
+  nav a {
+    color: #333 !important;
+    font-weight: 600;
+  }
+
+  nav a:hover {
+    color: #16a085 !important;
+  }
+}
+
+/*====sur petit ecran et tablette======*/
+/* === ✅ TABLETTE (jusqu'à 768px) === */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  /* Header et menu */
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 
-    header nav ul {
-        flex-direction: column;
-        width: 100%;
-    }
+  header nav {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    background: #f8f8f8;
+    padding: 15px 0;
+  }
 
-    header nav ul li {
-        margin-bottom: 10px;
-    }
+  header nav.active {
+    display: flex;
+  }
 
-    #accueil h2 {
-        font-size: 1.6rem;
-    }
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 
-    #accueil .btn {
-        padding: 12px 30px;
-        font-size: 1rem;
-    }
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Barre de recherche centrée */
+  .search-bar {
+    width: 70%;
+    margin: 10px auto;
+  }
+
+  /* Grille produits sur 3 colonnes */
+  .produit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .produit-card {
+    width: 100%;
+    max-width: 220px;
+    padding: 15px;
+  }
+
+  /* Pied de page */
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
 }
 
+/* === ✅ MOBILE (jusqu'à 480px) === */
 @media (max-width: 480px) {
-    footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
+  /* Header et éléments alignés */
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
 
-    #accueil h2 {
-        font-size: 1.4rem;
-    }
+  /* Barre de recherche */
+  .search-bar {
+    width: 85%;
+    margin: 10px auto;
+  }
 
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
+  /* Hero */
+  #accueil h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  #accueil p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  #accueil .btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+
+  /* Grille produits sur 2 colonnes */
+  .produit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    justify-items: center;
+  }
+
+  .produit-card {
+    width: 100%;
+    max-width: 180px;
+    padding: 12px;
+  }
+
+  /* Pied de page */
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 15px;
+  }
 }
+
 
 /* ===== FOOTER ===== */
 footer {

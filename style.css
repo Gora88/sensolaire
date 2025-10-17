@@ -86,7 +86,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  color: #1e7d22;
+  color: #e6c017;
 }
 
 /* Menu burger pour mobile */
@@ -191,7 +191,7 @@ header nav ul li a:hover {
 }
 
 #accueil .btn:hover {
-  background: #145916;
+  background: #fdd803;
   transform: scale(1.05);
 }
 
@@ -257,10 +257,6 @@ header nav ul li a:hover {
   transition: background 0.3s, transform 0.3s;
 }
 
-.btn-apropos:hover {
-  background: #145916;
-  transform: scale(1.05);
-}
 
 .apropos-image {
   flex: 1;
@@ -327,13 +323,19 @@ header nav ul li a:hover {
 #portfolio {
   text-align: center;
   background: #f8f8f8;
-  padding: 80px 20px;
+  padding: 65px 20px;
 }
 
 #portfolio h2 {
   color: #2c3e50;
   font-size: 2rem;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
+}
+
+#portfolio h1 {
+  color: #e6c017;
+  font-size: 4.5rem;
+  margin-bottom: 10px;
 }
 
 .portfolio-gallery {
@@ -365,7 +367,7 @@ header nav ul li a:hover {
 
 .portfolio-item h3 {
   font-size: 1.2rem;
-  color: #333;
+  color: #3c8145;
 }
 
 .portfolio-item p {

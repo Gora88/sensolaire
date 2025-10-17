@@ -224,7 +224,7 @@ function printOrder(name, phone, address) {
 
 // ======== ENVOI WHATSAPP ========
 function sendWhatsApp(name, phone, address, orderNumber) {
-  const number = "221762585606";
+  const number = "+221762585606";
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const order = cart.map(item => `- ${item.name} x${item.quantity} (${(item.price * item.quantity).toLocaleString()} FCFA)`).join('\n');
 
@@ -307,12 +307,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn             = document.getElementById('nextImage');
 
   const productImages = {
-    "Panneau Solaire 300W": ["../images/panneau.jpg","../images/panneau1.jpg"],
-    "Onduleur 5kW": ["../images/onduleur.jpg","../images/onduleur2.jpg"],
-    "Lampadaire Solaire 100W": ["../images/lampadaire.jpg","../images/lampadaire2.jpg"],
-    "Projecteur Solaire LED 200W": ["../images/projecteur1.jpg","../images/projecteur2.jpg"],
-    "Pompe solaire 500w": ["../images/pompe1.jpg","../images/pompe.jpg"],
-    "Projecteur Solaire LED 200W": ["../images/projecteur.jpg","../images/projecteur.jpg"]
+    "Panneau Solaire 300W": 
+                          ["../images/panneau.jpg",
+                           "../images/panneau1.jpg"],
+    "Onduleur 5kW": 
+                          [ "../images/onduleur.jpg",
+                            "../images/onduleur2.jpg"],
+    "Lampadaire Solaire 100W": 
+                          [ "../images/lampadaire.jpg",
+                            "../images/lampadaire2.jpg"],
+    "Projecteur Solaire LED 200W": 
+                         ["../images/projecteur1.jpg",
+                          "../images/projecteur2.jpg"],
+    "Pompe solaire 500w": 
+                         ["../images/pompe1.jpg",
+                          "../images/pompe.jpg"
+                        ],
+    "Projecteur Solaire LED 200W": 
+                        ["../images/projecteur.jpg",
+                          "../images/projecteur.jpg"]
   };
 
   let currentImages = [];
