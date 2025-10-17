@@ -636,11 +636,9 @@ nav a:hover {
   color: #1abc9c;
   transform: translateY(-50%) scale(1.1);
 }
-
-
-/* ===== RESPONSIVE ===== *//* ===== RESPONSIVE MOBILE & TABLETTE ===== */
+/* ===== RESPONSIVE MOBILE & TABLETTE ===== */
 @media (max-width: 1024px) {
-  /* ✅ Réorganisation du header */
+  /* Header */
   header {
     flex-wrap: wrap;
     justify-content: space-between;
@@ -648,19 +646,19 @@ nav a:hover {
     padding: 10px 15px;
   }
 
-  /* ✅ Logo toujours à gauche */
+  /* Logo à gauche */
   header .logo {
     order: 1;
   }
 
-  /* ✅ Barre de recherche centrée sous le header */
+  /* Barre de recherche centrée sous le header */
   .search-bar {
     order: 3;
     width: 90%;
     margin: 10px auto;
   }
 
-  /* ✅ Menu hamburger visible à droite */
+  /* Menu hamburger visible à droite */
   .menu-toggle {
     order: 2;
     display: flex;
@@ -676,7 +674,7 @@ nav a:hover {
     border-radius: 3px;
   }
 
-  /* ✅ Cacher la navigation par défaut */
+  /* Navigation cachée par défaut */
   nav {
     display: none;
     width: 100%;
@@ -685,7 +683,7 @@ nav a:hover {
     border-top: 1px solid #ddd;
   }
 
-  /* ✅ Afficher le menu au clic */
+  /* Affichage du menu au clic */
   nav.active {
     display: block;
   }
@@ -696,7 +694,6 @@ nav a:hover {
     margin: 15px 0;
   }
 
-  /* ✅ Liens noirs pour être lisibles sur fond blanc */
   nav a {
     color: #333 !important;
     font-weight: 600;
@@ -707,11 +704,10 @@ nav a:hover {
   }
 }
 
-/*====sur petit ecran et tablette======*/
-/* === ✅ MOBILE & TABLETTE : header horizontal compact === */
+/* ===== TABLETTE (max-width: 768px) ===== */
 @media (max-width: 768px) {
   header {
-    flex-direction: row;              /* ✅ tout sur une seule ligne */
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 8px 15px;
@@ -734,7 +730,7 @@ nav a:hover {
     white-space: nowrap;
   }
 
-  /* ✅ Barre de recherche compacte et centrée */
+  /* Barre de recherche compacte et centrée */
   .search-bar {
     flex: 1;
     max-width: 140px;
@@ -752,7 +748,7 @@ nav a:hover {
     width: 100%;
   }
 
-  /* ✅ Menu hamburger bien visible à droite */
+  /* Menu hamburger */
   .menu-toggle {
     display: flex;
     flex-direction: column;
@@ -768,7 +764,7 @@ nav a:hover {
     border-radius: 2px;
   }
 
-  /* Cacher le menu par défaut */
+  /* Navigation */
   header nav {
     display: none;
     width: 100%;
@@ -788,11 +784,17 @@ nav a:hover {
   }
 
   header nav a {
-    color: #000; /* ✅ texte noir sur fond clair */
+    color: #000;
+  }
+
+  /* Grille produits tablette : 2 colonnes */
+  .produit-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 }
 
-/* === ✅ Version ultra compacte pour téléphone étroit === */
+/* ===== MOBILE ÉTROIT (max-width: 480px) ===== */
 @media (max-width: 480px) {
   header {
     padding: 6px 10px;
@@ -808,7 +810,7 @@ nav a:hover {
   }
 
   .search-bar {
-    max-width: 80px;
+    max-width: 85px;
     height: 28px;
   }
 
@@ -819,6 +821,12 @@ nav a:hover {
   .menu-toggle span {
     width: 20px;
     height: 2px;
+  }
+
+  /* Grille produits mobile : 1 colonne */
+  .produit-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 }
 
