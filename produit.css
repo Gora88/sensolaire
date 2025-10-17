@@ -831,6 +831,68 @@ nav a:hover {
 }
 
 
+/* Style général du sidebar */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.categories-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Liste des catégories */
+.categories-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-wrap: wrap; /* permet plusieurs lignes */
+  gap: 10px;
+}
+
+/* MOBILE / TABLETTE : cacher par défaut */
+@media (max-width: 768px) {
+  .categories-list {
+    display: none; /* caché par défaut */
+    flex-wrap: wrap;
+  }
+
+  /* 2 colonnes quand visible */
+  .sidebar.active .categories-list {
+    display: flex;
+  }
+
+  .categories-list li {
+    flex: 1 1 calc(50% - 10px); /* 2 colonnes */
+    text-align: center;
+  }
+
+  /* Rotation de la flèche quand actif */
+  .sidebar.active .categories-toggle {
+    transform: rotate(90deg);
+  }
+}
+
+/* Très petit écran : 1 colonne */
+@media (max-width: 480px) {
+  .categories-list li {
+    flex: 1 1 100%;
+  }
+}
+
+
 /* ===== FOOTER ===== */
 footer {
   background: #1abc9c;
