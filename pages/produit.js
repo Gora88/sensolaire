@@ -421,3 +421,10 @@ document.getElementById('search-input').addEventListener('input', function() {
   });
 });
 
+//categorie retractable
+const toggleBtn = document.querySelector('.categories-toggle');
+const sidebar = document.querySelector('.sidebar');
+
+toggleBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
