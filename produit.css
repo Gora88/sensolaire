@@ -832,6 +832,13 @@ nav a:hover {
 
 
 
+/* Flèches sidebar invisibles par défaut (desktop) */
+.sidebar-toggle.left,
+.sidebar-toggle.right {
+  display: none;
+}
+
+
 /* ===================== Responsive Sidebar pour Mobile/Tablet ===================== */
 @media (max-width: 1024px) {
   /* Sidebar fermée par défaut */
@@ -839,6 +846,7 @@ nav a:hover {
     width: 0;
     padding: 20px 0;
     transition: width 0.3s;
+    
   }
 
   .sidebar.open {
@@ -907,12 +915,6 @@ nav a:hover {
   }
 }
 
-
-/* Flèches sidebar invisibles par défaut (desktop) */
-.sidebar-toggle.left,
-.sidebar-toggle.right {
-  display: none;
-}
 
 /* ===== FOOTER ===== */
 footer {
