@@ -862,41 +862,40 @@ nav a:hover {
   .sidebar.closed ul.categories-list {
     opacity: 0;
   }
+.sidebar-toggle.left {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  background: #16a085;
+  color: white;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 5px 5px 0;
+}
 
-  /* Flèche pour ouvrir */
-  .sidebar-toggle.left {
-    position: fixed;
-    top: 20px;
-    left: 0;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 1000;
-    background: #16a085;
-    color: white;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0 5px 5px 0;
-  }
-
-  /* Flèche pour fermer */
-  .sidebar-toggle.right {
-    position: absolute;
-    top: 20px;
-    right: -30px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    background: #16a085;
-    color: white;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px 0 0 5px;
-  }
+.sidebar-toggle.right {
+  display: flex;
+  position: fixed; /* absolute → fixed pour suivre le scroll */
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: #16a085;
+  color: white;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px 0 0 5px;
+}
 
   /* Items plus compacts */
   .sidebar ul.categories-list li {
