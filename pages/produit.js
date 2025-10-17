@@ -422,9 +422,14 @@ document.getElementById('search-input').addEventListener('input', function() {
 });
 
 //categorie retractable
-const toggleBtn = document.querySelector('.categories-toggle');
 const sidebar = document.querySelector('.sidebar');
+const openBtn = document.querySelector('.sidebar-toggle.left');
+const closeBtn = document.querySelector('.sidebar-toggle.right');
 
-toggleBtn.addEventListener('click', () => {
-  sidebar.classList.toggle('active');
+openBtn.addEventListener('click', () => {
+  sidebar.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  sidebar.classList.remove('active');
 });

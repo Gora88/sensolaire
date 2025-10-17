@@ -831,65 +831,73 @@ nav a:hover {
 }
 
 
-/* Style général du sidebar */
-.sidebar-header {
+/* Sidebar masquée par défaut */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -180px; /* cachée à gauche */
+  width: 180px;
+  height: 100%;
+  background: #f8f8f8;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  transition: left 0.3s ease;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-
-.sidebar-header h3 {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.categories-toggle {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  z-index: 1000;
 }
 
 /* Liste des catégories */
 .categories-list {
   list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
+  padding: 10px;
+  margin: 0;
   display: flex;
-  flex-wrap: wrap; /* permet plusieurs lignes */
+  flex-direction: column;
   gap: 10px;
 }
 
-/* MOBILE / TABLETTE : cacher par défaut */
-@media (max-width: 768px) {
-  .categories-list {
-    display: none; /* caché par défaut */
-    flex-wrap: wrap;
-  }
-
-  /* 2 colonnes quand visible */
-  .sidebar.active .categories-list {
-    display: flex;
-  }
-
-  .categories-list li {
-    flex: 1 1 calc(50% - 10px); /* 2 colonnes */
-    text-align: center;
-  }
-
-  /* Rotation de la flèche quand actif */
-  .sidebar.active .categories-toggle {
-    transform: rotate(90deg);
-  }
+.categories-list li a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #333;
 }
 
-/* Très petit écran : 1 colonne */
-@media (max-width: 480px) {
-  .categories-list li {
-    flex: 1 1 100%;
-  }
+/* Flèches */
+.sidebar-toggle {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 40px;
+  background: #16a085;
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
+  border-radius: 0 5px 5px 0;
+}
+
+/* Flèche gauche pour ouvrir */
+.sidebar-toggle.left {
+  left: 0;
+}
+
+/* Flèche droite pour fermer */
+.sidebar-toggle.right {
+  position: absolute;
+  right: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+/* Sidebar visible */
+.sidebar.active {
+  left: 0;
 }
 
 
