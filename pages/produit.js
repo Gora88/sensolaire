@@ -411,7 +411,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         ],
     "Projecteur Solaire LED 200W": 
                         ["../images/projecteur.jpg",
-                          "../images/projecteur.jpg"]
+                          "../images/projecteur.jpg"],
+     "Onduleur injection 5kVA": 
+                        ["../images/inverter.jpg",
+                          "../images/inverter1.jpg",
+                          "../images/inverter2.jpg"],
+     "Cable solaire 16mm": 
+                        ["../images/cable16mm.jpg",
+                          "../images/cable16mn1.jpg",
+                          "../images/cable16mn2.jpg"]
   };
 
   let currentImages = [];
