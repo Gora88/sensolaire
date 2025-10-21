@@ -275,6 +275,7 @@ nav a:hover {
 .produit-card p {
   margin-bottom: 10px;
 }
+
 .produit-card button {
   background: #1abc9c;
   border: none;
@@ -342,6 +343,20 @@ nav a:hover {
 .produit-grid {
   align-items: stretch;
 }
+
+/* ====== STOCK ====== */
+.produit-card .stock {
+  font-size: 14px;
+  color: black;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.produit-card .add-to-cart:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
 
 
 /* ====== PANIER FLOTTANT COMPLET ====== */

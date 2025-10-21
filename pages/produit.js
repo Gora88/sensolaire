@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const name = card.querySelector('h3').textContent.trim();
       const priceText = card.querySelectorAll('p')[1].textContent;
       const price = parseInt(priceText.replace(/\D/g, ''));
-      addToCart(name, price);
+      addToCart(name, price, card);
     });
   });
 
@@ -30,17 +30,110 @@ document.addEventListener('DOMContentLoaded', () => {
   makeCartDraggable(); // panier déplaçable
 });
 
-// ======== GESTION PANIER ========
-function addToCart(name, price) {
+// ======== GESTION PANIER + STOCK ========
+
+// 🔹 Ajout au panier avec gestion du stock
+function addToCart(name, price, card) {
+  let stock = parseInt(card.getAttribute('data-stock')) || 0;
+
+  if (stock <= 0) {
+    alert("Stock épuisé !");
+    return;
+  }
+
+  // Diminuer le stock
+  stock -= 1;
+  card.setAttribute('data-stock', stock);
+  updateStockDisplay(card, stock);
+
+  // Ajouter au panier
   const existing = cart.find(item => item.name === name);
   if (existing) {
     existing.quantity += 1;
   } else {
     cart.push({ name, price, quantity: 1 });
   }
+
   updateCart();
 }
 
+// 🔹 Changer la quantité dans le panier
+function changeQty(index, delta) {
+  const item = cart[index];
+  const card = [...document.querySelectorAll('.produit-card')].find(c => c.querySelector('h3').textContent.trim() === item.name);
+
+  if (!card) return;
+
+  let stock = parseInt(card.getAttribute('data-stock')) || 0;
+
+  // Si on retire un article → stock remonte
+  if (delta < 0 && item.quantity > 0) {
+    stock += 1;
+    card.setAttribute('data-stock', stock);
+    updateStockDisplay(card, stock);
+  }
+
+  // Si on ajoute un article → stock diminue
+  if (delta > 0) {
+    if (stock <= 0) {
+      alert("Stock épuisé !");
+      return;
+    }
+    stock -= 1;
+    card.setAttribute('data-stock', stock);
+    updateStockDisplay(card, stock);
+  }
+
+  item.quantity += delta;
+  if (item.quantity <= 0) cart.splice(index, 1);
+  updateCart();
+}
+
+// 🔹 Supprimer un produit → restituer le stock
+function removeItem(index) {
+  const item = cart[index];
+  const card = [...document.querySelectorAll('.produit-card')].find(c => c.querySelector('h3').textContent.trim() === item.name);
+  if (card) {
+    let stock = parseInt(card.getAttribute('data-stock')) || 0;
+    stock += item.quantity;
+    card.setAttribute('data-stock', stock);
+    updateStockDisplay(card, stock);
+  }
+  cart.splice(index, 1);
+  updateCart();
+}
+
+// 🔹 Vider le panier → tout restituer
+function clearCart() {
+  cart.forEach(item => {
+    const card = [...document.querySelectorAll('.produit-card')].find(c => c.querySelector('h3').textContent.trim() === item.name);
+    if (card) {
+      let stock = parseInt(card.getAttribute('data-stock')) || 0;
+      stock += item.quantity;
+      card.setAttribute('data-stock', stock);
+      updateStockDisplay(card, stock);
+    }
+  });
+
+  cart = [];
+  updateCart();
+  localStorage.removeItem('cart');
+}
+
+// 🔹 Met à jour le stock affiché
+function updateStockDisplay(card, newStock) {
+  const stockEl = card.querySelector('.stock span');
+  if (stockEl) {
+    stockEl.textContent = newStock;
+    stockEl.style.color = newStock > 0 ? "#16a085" : "red";
+  }
+  const addBtn = card.querySelector('button');
+  addBtn.disabled = newStock <= 0;
+  addBtn.style.background = newStock <= 0 ? "#ccc" : "#1abc9c";
+  addBtn.style.cursor = newStock <= 0 ? "not-allowed" : "pointer";
+}
+
+// 🔹 Met à jour le panier à l’écran
 function updateCart() {
   const cartList = document.getElementById('cart-items');
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -63,31 +156,9 @@ function updateCart() {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-function changeQty(index, delta) {
-  cart[index].quantity += delta;
-  if (cart[index].quantity <= 0) cart.splice(index, 1);
-  updateCart();
-}
-
-function removeItem(index) {
-  cart.splice(index, 1);
-  updateCart();
-}
-
-function clearCart() {
-  cart = [];
-  updateCart();
-  localStorage.removeItem('cart');
-}
-
 // ======== FORMULAIRE CLIENT ========
-function openClientForm() {
-  document.getElementById('client-form').classList.remove('hidden');
-}
-
-function closeClientForm() {
-  document.getElementById('client-form').classList.add('hidden');
-}
+function openClientForm() { document.getElementById('client-form').classList.remove('hidden'); }
+function closeClientForm() { document.getElementById('client-form').classList.add('hidden'); }
 
 function confirmOrder() {
   const name = document.getElementById('client-name').value.trim();
@@ -103,6 +174,11 @@ function confirmOrder() {
   printOrder(name, phone, address);
   clearCart();
 }
+
+
+
+
+
 
 // ======== IMPRESSION COMMANDE ========
 function printOrder(name, phone, address) {
