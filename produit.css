@@ -403,7 +403,7 @@ nav a:hover {
   grid-template-columns: 50px 1fr 200px 60px 30px; 
   /* 50px pour l'image, 1fr pour le nom, 90px pour controls, 60px pour le prix, 30px pour la croix */
   align-items: center; 
-  padding: 5px 0;
+  padding: 10px 0;
   border-bottom: 1px solid #ccc;
   gap: 5px;
 }
