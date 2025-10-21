@@ -72,8 +72,6 @@ nav a:hover {
 }
 
 
-
-
 /* ===== Bannière défilante ===== */
 .banner {
   width: 100%;
@@ -358,13 +356,12 @@ nav a:hover {
 }
 
 
-
 /* ====== PANIER FLOTTANT COMPLET ====== */
 #cart {
   position: fixed;
-  top: 60px;       /* Position initiale */
+  top: 60px;       
   right: 20px;
-  width: 250px;
+  width: 300px;
   max-height: 70vh;
   background: #fff;
   border: 2px solid #16a085;
@@ -377,6 +374,17 @@ nav a:hover {
   transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
 }
 
+.cart-name {
+  display: flex;
+  flex-direction: column; /* chaque mot sur sa ligne */
+  justify-content: center;
+  height: 50px;           /* même hauteur que l'image */
+  font-size: 0.5rem;      /* ajuste la taille du texte */
+  line-height: 1.1;       /* espace entre les mots */
+  text-align: center;     /* centrer les mots */
+}
+
+
 /* Poignée pour déplacer le panier */
 #cart-header {
   cursor: grab;
@@ -387,10 +395,79 @@ nav a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  user-select: none; /* évite la sélection de texte en drag */
+  user-select: none;
+}
+
+/* Liste des produits dans le panier */
+#cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc; /* trait horizontal entre les produits */
+}
+
+.cart-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.cart-name {
+  flex: 1; /* occupe l'espace entre image et contrôles */
+}
+
+.cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Boutons + / - */
+.qty-btn {
+  background-color: transparent;
+  color: #1877f2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.qty-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Prix et total */
+.price {
+  min-width: 60px;
+  text-align: right;
+}
+
+/* Bouton supprimer */
+.remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: red;
+  font-size: 1.2rem;
 }
 
 /* Boutons à l’intérieur du panier */
+#cart > div p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
 #cart button {
   border: none;
   border-radius: 5px;
@@ -398,11 +475,6 @@ nav a:hover {
   font-size: 0.9rem;
   cursor: pointer;
   transition: background 0.3s;
-}
-#cart > div p {
-  text-align: center;
-  font-size: 1.2rem; /* optionnel pour ajuster la taille */
-  margin-bottom: 12px; /* pour espacer le total des boutons */
 }
 
 /* Bouton "Vider" en rouge */
@@ -416,21 +488,7 @@ nav a:hover {
   background-color: #c0392b;
 }
 
-/* Boutons + / - discrets */
-.qty-btn {
-  background-color: transparent;
-  color: #1877f2;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 2px 6px;
-  font-weight: bold;
-}
-
-.qty-btn:hover {
-  background-color: #f0f0f0;
-}
-
-/* Autres boutons (ex: imprimer) */
+/* Bouton "Imprimer" ou autres */
 #btn-print {
   background-color: #16a085;
   color: white;
@@ -1237,3 +1295,7 @@ footer {
     display: flex;
   }
 }
+
+
+
+

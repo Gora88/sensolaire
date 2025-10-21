@@ -138,23 +138,33 @@ function updateCart() {
   const cartList = document.getElementById('cart-items');
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  cartList.innerHTML = cart.map((item, i) =>
-    `<li>
-      <span>${item.name}</span>
-      <div class="cart-controls">
-        <button class="qty-btn" onclick="changeQty(${i}, -1)">➖</button>
-        <span class="qty">${item.quantity}</span>
-        <button class="qty-btn" onclick="changeQty(${i}, 1)">➕</button>
-        <span class="price">${(item.price * item.quantity).toLocaleString()} </span>
-        <button class="remove" onclick="removeItem(${i})">❌</button>
-      </div>
-    </li>`).join('');
+  cartList.innerHTML = cart.map((item, i) => {
+  // trouver l'image du produit
+  const card = [...document.querySelectorAll('.produit-card')]
+                .find(c => c.querySelector('h3').textContent.trim() === item.name);
+  const imgSrc = card ? card.querySelector('img').src : '';
+
+  return `<li class="cart-item">
+    <img src="${imgSrc}" alt="${item.name}" class="cart-img">
+    <span class="cart-name">${item.name}</span>
+    <div class="cart-controls">
+      <button class="qty-btn" onclick="changeQty(${i}, -1)">➖</button>
+      <span class="qty">${item.quantity}</span>
+      <button class="qty-btn" onclick="changeQty(${i}, 1)">➕</button>
+      <span class="price">${(item.price * item.quantity).toLocaleString()}</span>
+      <button class="remove" onclick="removeItem(${i})">❌</button>
+    </div>
+  </li>`;
+}).join('');
+
 
   document.getElementById('cart-total').textContent = total.toLocaleString();
 
   // ✅ Sauvegarde dans localStorage
   localStorage.setItem('cart', JSON.stringify(cart));
 }
+
+
 
 // ======== FORMULAIRE CLIENT ========
 function openClientForm() { document.getElementById('client-form').classList.remove('hidden'); }
