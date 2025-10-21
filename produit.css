@@ -361,7 +361,7 @@ nav a:hover {
   position: fixed;
   top: 60px;       
   right: 20px;
-  width: 350px;
+  width: 360px;
   max-height: 70vh;
   background: #fff;
   border: 2px solid #16a085;
@@ -454,9 +454,6 @@ nav a:hover {
   font-size: 1rem;
 }
 
-
-
-
 /* Boutons à l’intérieur du panier */
 #cart > div p {
   text-align: center;
@@ -472,12 +469,22 @@ nav a:hover {
   cursor: pointer;
   transition: background 0.3s;
 }
+.cart-actions {
+  margin-top: 10px;
+}
+
+.cart-buttons {
+  display: flex;
+  justify-content: space-between; /* un bouton à gauche, l'autre à droite */
+  gap: 10px; /* petit espace entre les boutons si nécessaire */
+}
 
 /* Bouton "Vider" en rouge */
 #btn-clear {
   background-color: #e74c3c;
   color: white;
   font-weight: bold;
+  
 }
 
 #btn-clear:hover {
