@@ -361,7 +361,7 @@ nav a:hover {
   position: fixed;
   top: 60px;       
   right: 20px;
-  width: 300px;
+  width: 350px;
   max-height: 70vh;
   background: #fff;
   border: 2px solid #16a085;
@@ -398,19 +398,14 @@ nav a:hover {
   user-select: none;
 }
 
-/* Liste des produits dans le panier */
-#cart-items {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .cart-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc; /* trait horizontal entre les produits */
+  display: grid;
+  grid-template-columns: 50px 1fr 200px 60px 30px; 
+  /* 50px pour l'image, 1fr pour le nom, 90px pour controls, 60px pour le prix, 30px pour la croix */
+  align-items: center; 
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
+  gap: 5px;
 }
 
 .cart-img {
@@ -421,45 +416,46 @@ nav a:hover {
 }
 
 .cart-name {
-  flex: 1; /* occupe l'espace entre image et contrôles */
+  display: flex;
+  flex-direction: column; /* vertical mot par mot */
+  font-size: 0.8rem;
+  line-height: 1.1;
+  
 }
 
 .cart-controls {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 3px; /* réduit l'espace entre -, qty, + */
 }
 
-/* Boutons + / - */
 .qty-btn {
   background-color: transparent;
   color: #1877f2;
   border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 2px 6px;
+  padding: 2px 5px;
   font-weight: bold;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 
-.qty-btn:hover {
-  background-color: #f0f0f0;
-}
-
-/* Prix et total */
 .price {
-  min-width: 60px;
   text-align: right;
+  font-size: 0.85rem;
 }
 
-/* Bouton supprimer */
 .remove {
   background: none;
   border: none;
   cursor: pointer;
   color: red;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
+
+
+
 
 /* Boutons à l’intérieur du panier */
 #cart > div p {
