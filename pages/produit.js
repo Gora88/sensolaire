@@ -425,9 +425,9 @@ document.addEventListener('DOMContentLoaded', () => {
 "connecteur MC4 de qualite":  
                             ["../images/connecteurmc4.jpg",
                             "../images/connecteurmc4bis.png"],
-  "Inverseur de source: solaire et senelec":
-                                             ["../images/inverseur.jpg",
-                                               "../images/inverseur1.jpg"]
+  "Inverseur de source":
+                          ["../images/inverseur.jpg",
+                          "../images/inverseur1.jpg"]
   };
 
   let currentImages = [];
