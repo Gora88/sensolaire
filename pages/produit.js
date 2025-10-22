@@ -316,8 +316,9 @@ function sendWhatsApp(name, phone, address, orderNumber) {
 
   const message = `
 🧾 *Nouvelle commande SenSolaire*
------------------------------------
+--------------------------------------
 📦 *N° de commande :* ${orderNumber}
+--------------------------------------
 👤 *Client :* ${name}
 📞 *Téléphone :* ${phone}
 📍 *Adresse :* ${address}
@@ -393,9 +394,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn             = document.getElementById('nextImage');
 
   const productImages = {
-    "Panneau Solaire 300W": 
+    "Panneau Solaire 550W": 
                           ["../images/panneau.jpg",
-                           "../images/panneau1.jpg"],
+                           "../images/panneau1.jpg",
+                           "../images/panneau2.jpg"],
     "Onduleur 5kW": 
                           [ "../images/onduleur.jpg",
                             "../images/onduleur2.jpg"],
@@ -448,7 +450,6 @@ document.addEventListener('DOMContentLoaded', () => {
         thumb.addEventListener("click",()=>{currentIndex=i; updateImage();});
         thumbnailsContainer.appendChild(thumb);
       });
-
       modal.classList.remove('hidden');
     });
   });
