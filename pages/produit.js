@@ -403,7 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             "../images/onduleur2.jpg"],
     "Lampadaire Solaire 100W": 
                           [ "../images/lampadaire.jpg",
-                            "../images/lampadaire2.jpg"],
+                            "../images/lampadaire1.jpg"],
     "Projecteur Solaire LED 200W": 
                          ["../images/projecteur1.jpg",
                           "../images/projecteur2.jpg"],
