@@ -99,17 +99,29 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contactez-nous</h2>
-    <p>Remplissez le formulaire ci-dessous pour obtenir un devis ou plus d’informations.</p>
-    <form>
-      <input type="text" placeholder="Nom complet" required>
-      <input type="email" placeholder="Adresse e-mail" required>
-      <textarea placeholder="Votre message..." required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
-  </section>
+<!-- CONTACT -->
+<section id="contact">
+  <h1>CONTACTEZ-NOUS</h1>
+  <h2>Appelle d'urgence au : 77 373 40 42 / 76 258 56 06</h2>
+  <p>OU</p>
+  <p>Remplissez le formulaire ci-dessous pour obtenir un devis ou plus d’informations.</p>
+  <br>
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Nom complet" required>
+    <input type="email" name="email" placeholder="Adresse e-mail" required>
+    <textarea name="message" placeholder="Votre message..." required></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+</section>
+
+<!-- Inclure EmailJS -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init('0lyHymuytPsY5CPRV'); // ton User ID / Public Key
+  })();
+</script>
+
  <!-- ===== FOOTER ===== -->
 <footer>
   <div class="footer-content">
@@ -138,6 +150,26 @@
       navbar.classList.toggle('active');
       toggle.classList.toggle('open');
     });
+
+
+
+   //envoie d'email
+   // Écoute l’envoi du formulaire
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault(); // Empêche le rechargement de la page
+
+  // Envoi via EmailJS
+  emailjs.sendForm('service_6tl80ig', 'template_oykc7k2', this)
+    .then(() => {
+      alert('Message envoyé avec succès ! ✅');
+      this.reset(); // Réinitialise le formulaire
+    })
+    .catch((err) => {
+      console.error('Erreur EmailJS :', err);
+      alert('Erreur lors de l’envoi. Vérifiez la console pour plus de détails.');
+    });
+});
+
   </script>
 </body>
 </html>
