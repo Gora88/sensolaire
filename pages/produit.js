@@ -395,8 +395,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const productImages = {
     "Panneau Solaire 550W": 
-                          ["../images/panneau.jpg",
-                           "../images/panneau1.jpg",
+                          ["../images/panneau1.jpg",
+                           "../images/panneau.jpg",
                            "../images/panneau2.jpg"],
     "Onduleur 5kW": 
                           [ "../images/onduleur.jpg",
@@ -421,7 +421,13 @@ document.addEventListener('DOMContentLoaded', () => {
      "Cable solaire 16mm": 
                         ["../images/cable16mm.jpg",
                           "../images/cable16mn1.jpg",
-                          "../images/cable16mn2.jpg"]
+                          "../images/cable16mn2.jpg"],
+"connecteur MC4 de qualite":  
+                            ["../images/connecteurmc4.jpg",
+                            "../images/connecteurmc4bis.png"],
+  "Inverseur de source: solaire et senelec":
+                                             ["../images/inverseur.jpg",
+                                               "../images/inverseur1.jpg"]
   };
 
   let currentImages = [];
